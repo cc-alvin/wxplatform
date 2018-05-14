@@ -2,7 +2,7 @@ import requests
 import json
 
 
-def getReply(msg):
+def getReply(msg,openid):
     data = {
         "reqType": 0,
         "perception": {
@@ -13,7 +13,7 @@ def getReply(msg):
         # 图灵机器人api接口
         "userInfo": {
             "apiKey": "YOUR_APIKEY",
-            "userId": "YOUR_USERID"
+            "userId": openid
         }
     }
     rep = requests.post(url='http://openapi.tuling123.com/openapi/api/v2', json=data)
