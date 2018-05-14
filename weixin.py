@@ -79,7 +79,7 @@ def handleMessage(message, openid):
         invitation.addOpenid(openid, db)
         return invitation.getInvitationCode(db)
     else:
-        return robot.getReply(message)
+        return robot.getReply(message,openid)
 
 
 @app.route('/reply', methods=['POST'])
