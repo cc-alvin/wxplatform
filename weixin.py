@@ -29,15 +29,11 @@ def handleGet(request):
     timestamp = request.args.get("timestamp");
     nonce = request.args.get("nonce");
     echostr = request.args.get("echostr");
-    print(signature)
-    print(token)
-    print(timestamp)
-    print(nonce)
-    print(echostr)
     list = [token, timestamp, nonce]
     list.sort()
     sha1 = hashlib.sha1()
-    map(sha1.update, list)
+    string=''.join(list)
+    sha1.update(string.encode())
     hashcode = sha1.hexdigest()
     print("GET verify: hashcode, signature: ", hashcode, signature)
     if signature == hashcode:
