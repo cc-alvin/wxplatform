@@ -8,4 +8,4 @@
 4. 运行`python weixin.py`
 
 注：
-  - 运行之前请替换图灵机器人的apikey和userid.
+  - 运行之前请替换图灵机器人的apikey.
